@@ -29,8 +29,8 @@ class Database {
   }
 
   private function confirm_query($result) {
-    if ($result) {
-      die ("Query Failed" . $this->connection->error);
+    if (!$result) {  // Check if $result is false (query failed)
+      die("Query Failed: " . $this->connection->error);  // Display the error message
     }
   }
 
